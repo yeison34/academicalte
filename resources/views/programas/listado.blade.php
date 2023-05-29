@@ -3,13 +3,13 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Facultades</h1>
+    <h1>Programas</h1>
 
 
 @stop
 
 @section('content')
-    <p>Listado de Facultades</p>
+    <p>Listado de Programas</p>
 
 @stop
 
