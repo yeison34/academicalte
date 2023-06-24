@@ -329,22 +329,22 @@ return [
         ],
         [
             'text' => 'Programas',
-            'url'  => '/programas/listado',
+            'url'  => '/Programas/Listado',
             'icon' => 'fas fa-fw fa-list',
         ],
         [
             'text' => 'Profesores',
-            'url'  => '/profesores/listado',
+            'url'  => '/Profesores/Listado',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Estudiantes',
-            'url'  => '/estudiantes/listado',
+            'url'  => 'Estudiantes/Listado',
             'icon' => 'fas fa-fw fa-users',
         ],
         [
             'text' => 'Calificaciones',
-            'url'  => '/regnotas/listado',
+            'url'  => '/Calificaciones/Listado',
             'icon' => 'fas fa-fw fa-book',
         ],
 
