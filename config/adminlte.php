@@ -348,6 +348,12 @@ return [
             'icon' => 'fas fa-fw fa-book',
         ],
 
+        [
+            'text' => 'Reportes',
+            'url'  => '/reportes/listado',
+            'icon' => 'fas fa-fw fa-book',
+        ],
+
         /*
         [
             'text'    => 'multilevel',

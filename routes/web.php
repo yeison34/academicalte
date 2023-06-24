@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Facultades;
-use App\Http\Controllers\ProgramasController;
-use App\Http\Controllers\CalificacionesController;
-use App\Http\Controllers\EstudiantesController;
-use App\Http\Controllers\ProfesoresController;
+use App\Http\Controllers\Programas;
+use App\Http\Controllers\Estudiantes;
+use App\Http\Controllers\Calificaciones;
+use App\Http\Controllers\Profesores;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +24,27 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [HomeController::class, 'index']);
-Route::get('/facultades/listado', [Facultades::class, 'index']);
-Route::get('/Programas/Listado',[ProgramasController::class],'Listado');
-Route::get('/Estudiantes/Listado',[EstudiantesController::class],'Listado');
-Route::get('/Profesores/Listado',[ProfesoresController::class],'Listado');
-Route::get('/Calificaciones/Listado',[CalificacionesController::class],'Listado');
+Route::get('/facultades/listado', [Facultades::class, 'index'])->name('listadoFac');
+Route::get('/facultades/registrar',
+ [Facultades::class, 'form_registro']);
+Route::post('/facultades/registrar',
+ [Facultades::class, 'registrar']);
+ Route::get('/facultades/eliminar/{id}',
+ [Facultades::class, 'eliminar'])->name('eliminaFac');
+
+
+
+
+
+
+Route::get('/programas/listado', [Programas::class, 'index']);
+
+Route::get('/estudiantes/listado', [Estudiantes::class, 'index']);
+
+Route::get('/profesores/listado', [Profesores::class, 'index']);
+
+Route::get('/regnotas/listado', [Calificaciones::class, 'index']);
+
 
 
 
