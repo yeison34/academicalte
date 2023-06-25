@@ -10,4 +10,5 @@ class Profesor extends Model
     protected $table = 'profesores';
     protected $primaryKey = 'codprofesor';
     public $timestamps = true;
+    
 }

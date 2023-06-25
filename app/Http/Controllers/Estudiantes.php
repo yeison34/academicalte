@@ -30,6 +30,7 @@ class Estudiantes extends Controller
 
     //funcion para listar los estudiantes 
     public function Listar_Estudiantes(){
+        
         $estudiante=DB::table('estudiantes')->get();
         return view('Estudiantes.Listar_Estudiantes',['estudiante'=>$estudiante]);
     }

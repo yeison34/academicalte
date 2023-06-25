@@ -10,4 +10,5 @@ class Estudiante extends Model
     protected $table = 'estudiantes';
     protected $primaryKey = 'codestudiante';
     public $timestamps = true;
+    
 }
