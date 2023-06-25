@@ -18,10 +18,23 @@ class Facultades extends Controller
         return view('facultades.form_registro');
     }
 
+    public function form_editar($id){
+        $facultad=Facultad::findOrFail($id);
+        return view('facultades.form_editar',['modelo'=>$facultad]);
+    }
+
     public function registrar(Request $r){
         $facultad = new Facultad();
         $facultad->codFacultad = $r->input('codigoFacultad');
         $facultad->nomFacultad = $r->input('nombreFacultad');
+        $facultad->save();
+        return redirect()->route('listadoFac');
+    }
+
+    public function editar(Request $r){
+        $id=$r->input('codFacultad');
+        $facultad = Facultad::findOrFail($id);
+        $facultad->nomFacultad = $r->input('nomFacultad');
         $facultad->save();
         return redirect()->route('listadoFac');
     }
@@ -32,5 +45,6 @@ class Facultades extends Controller
         return redirect()->route('listadoFac');
     }
  
+    
     
 }
