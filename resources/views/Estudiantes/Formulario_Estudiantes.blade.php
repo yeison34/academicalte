@@ -28,22 +28,41 @@
 
         <div class="mb-3">
             <label for="nombreFacultad" class="form-label">Sexo</label>
-            <input type="text" class="form-control" id="sexo" name="sexo" placeholder="M - F" required/>
-        </div>
+            <select name="sexo" class="form-control" >
+                    <option>Seleccionar</option>
+                    <option value="M">MASCULINO</option>
+                    <option value="F">FEMENINO</option>
+                </select>
+       </div>
 
         <div class="mb-3">
                 <label for="nombreFacultad" class="form-label">Ciudad</label>
-                <input type="text" class="form-control" id="ciudad" name="ciudad" required/>
+                <select name="ciudad" class="form-control" >
+                    <option>Seleccionar</option>
+                    @foreach($ciudades as $c)
+                        <option value="{{$c->codciudad}}">{{$c->nomciudad}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="mb-3">
                 <label for="nombreFacultad" class="form-label">Barrio</label>
-                <input type="text" class="form-control" id="barrio" name="barrio" required/>
+                <select name="barrio" class="form-control" >
+                    <option>Seleccionar</option>
+                    @foreach($barrios as $b)
+                        <option value="{{$b->codbarrio}}">{{$b->nombarrio}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="mb-3">
                 <label for="nombreFacultad" class="form-label">Programa</label>
-                <input type="text" class="form-control" id="programa" name="programa" required/>
+                <select name="programa" class="form-control" >
+                    <option>Seleccionar</option>
+                    @foreach($programas as $p)
+                        <option value="{{$p->codPrograma}}">{{$p->nomPrograma}}</option>
+                    @endforeach
+                </select>
             </div>
 
         <button type="submit" class="btn btn-success">Registrar</button>

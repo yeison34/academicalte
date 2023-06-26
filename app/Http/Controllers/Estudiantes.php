@@ -10,7 +10,10 @@ use App\Models\Estudiante;
 class Estudiantes extends Controller
 {
     public function Formulario_Estudiantes(){
-        return view('Estudiantes.Formulario_Estudiantes');
+        $ciudades=DB::table('ciudades')->get();
+        $barrios=DB::table('barrios')->get();
+        $programas=DB::table('programas')->get();;
+        return view('Estudiantes.Formulario_Estudiantes',['ciudades'=>$ciudades,'barrios'=>$barrios,'programas'=>$programas]);
     }
 
     public function Registrar(Request $r){
@@ -31,7 +34,12 @@ class Estudiantes extends Controller
     //funcion para listar los estudiantes 
     public function Listar_Estudiantes(){
         
-        $estudiante=DB::table('estudiantes')->get();
+        $estudiante=DB::table('estudiantes')
+        ->join('programas','programas.codPrograma','=','estudiantes.programa')
+        ->join('ciudades','ciudades.codciudad','=','estudiantes.ciudad')
+        ->join('barrios','barrios.codbarrio','=','estudiantes.barrio')
+        ->select('estudiantes.codestudiante','estudiantes.nomestudiante','estudiantes.edaestudiante','estudiantes.fechestudiante','estudiantes.sexestudiante','ciudades.nomciudad','barrios.nombarrio','programas.nomPrograma')
+        ->get();
         return view('Estudiantes.Listar_Estudiantes',['estudiante'=>$estudiante]);
     }
 

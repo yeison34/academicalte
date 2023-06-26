@@ -40,9 +40,9 @@
                 <td> {{ $f->edaestudiante}}</td>
                 <td> {{ $f->fechestudiante}}</td>
                 <td> {{ $f->sexestudiante}}</td>
-                <td> {{ $f->ciudad }}</td>
-                <td> {{$f->barrio}}</td>
-                <td> {{$f->programa}}</td>
+                <td> {{ $f->nomciudad }}</td>
+                <td> {{$f->nombarrio}}</td>
+                <td> {{$f->nomPrograma}}</td>
                 <td>
                     <a class="btn btn-primary">Editar</a>
                     <a class="btn btn-danger" href="{{route('eliminarEstu',$f->codestudiante)}}">Eliminar</a>
